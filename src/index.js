@@ -7,10 +7,6 @@ import reportWebVitals from './reportWebVitals';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <meta name='description' content='Little Lemon restaurant website'/>
-    <meta name='og:title' content='Little Lemon'/>
-    <meta name='og:description' content='Little Lemon restaurant website'/>
-    <meta name='og:image' content='Little Lemon logo'/>
     <App />
   </React.StrictMode>
 );
