@@ -1,0 +1,13 @@
+.meal-item {
+    display: flex;
+    flex-direction: column;
+    grid-column: auto;
+    grid-row: 2;
+    overflow: hidden;
+    border-radius: 1rem;
+    border: 1pt black solid;
+}
+.meal-item img {
+    height: 12.5rem;
+    object-fit: cover;
+}

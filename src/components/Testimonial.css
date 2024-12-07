@@ -1,0 +1,34 @@
+.testimonial {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 1rem;
+    border: 1pt black solid;
+    padding: 1rem;
+    background-color: white;
+}
+
+.testimonial img {
+    height: 10rem;
+    width: 10rem;
+    border-radius: 100%;
+    object-fit: cover;
+}
+.star {
+    font-size: 30px;
+    display: inline-block;
+    color: #ccc;
+}
+
+.star.full {
+    color: #ffd700;
+}
+.star.empty {
+    color: transparent;
+}
+
+.star.half {
+    color: #ffd700;
+    background: linear-gradient(to right, #ffd700 50%, #ccc 50%);
+    color: transparent;
+}

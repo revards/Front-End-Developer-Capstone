@@ -1,0 +1,15 @@
+.nav-header {
+    grid-template-columns: 1fr 1fr;
+}
+.nav-header nav ul {
+    display: flex;
+    justify-content: space-around;
+    flex-grow: 4;
+    flex-wrap: wrap;
+    gap: 0.5em;
+}
+@media (max-width: 60rem) {
+    .nav-header {
+        flex-direction: column;
+    }
+}
