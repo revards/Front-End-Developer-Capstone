@@ -1,13 +1,12 @@
-import React from 'react'
-import './Testimonials.css'
-import customerImg1 from './img/restaurant chef B.jpg';
-import customerImg2 from './img/restaurant chef B.jpg';
-import customerImg3 from './img/restaurant chef B.jpg';
-import customerImg4 from './img/restaurant chef B.jpg';
-import { Testimonial } from '../../Testimonial';
+import "./Testimonials.css";
+import customerImg1 from "./img/restaurant chef B.jpg";
+import customerImg2 from "./img/restaurant chef B.jpg";
+import customerImg3 from "./img/restaurant chef B.jpg";
+import customerImg4 from "./img/restaurant chef B.jpg";
+import { Testimonial } from "../../Testimonial";
 const customers = [
   {
-    name: 'Jamie',
+    name: "Jamie",
     image: customerImg1,
     rating: 4,
     says: `Nulla facilisi. Phasellus tincidunt libero non est tristique accumsan. 
@@ -15,7 +14,7 @@ const customers = [
     Maecenas turpis ante, sagittis at eros tincidunt, ultricies suscipit orci.`,
   },
   {
-    name: 'Peter',
+    name: "Peter",
     image: customerImg2,
     rating: 5,
     says: `Nulla facilisi. Phasellus tincidunt libero non est tristique accumsan. 
@@ -23,7 +22,7 @@ const customers = [
     Maecenas turpis ante, sagittis at eros tincidunt, ultricies suscipit orci.`,
   },
   {
-    name: 'Susan',
+    name: "Susan",
     image: customerImg3,
     rating: 4.5,
     says: `Nulla facilisi. Phasellus tincidunt libero non est tristique accumsan. 
@@ -31,7 +30,7 @@ const customers = [
     Maecenas turpis ante, sagittis at eros tincidunt, ultricies suscipit orci.`,
   },
   {
-    name: 'April',
+    name: "April",
     image: customerImg4,
     rating: 3.5,
     says: `Nulla facilisi. Phasellus tincidunt libero non est tristique accumsan. 
@@ -42,15 +41,15 @@ const customers = [
 
 export const Testimonials = () => {
   return (
-    <section className='testimonials'>
-      <div className='grid-container'>
-      <header>
-        <h2>What people say about us!</h2>
-     </header>
-     {customers.map((customer) =>
-          <Testimonial customer={customer} />
-        )}
-        </div>
+    <section className="testimonials">
+      <div className="grid-container">
+        <header>
+          <h2>What people say about us!</h2>
+        </header>
+        {customers.map((customer) => (
+          <Testimonial key={customer.name} customer={customer} />
+        ))}
+      </div>
     </section>
-  )
-}
+  );
+};

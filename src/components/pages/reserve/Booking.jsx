@@ -1,28 +1,44 @@
-import React, { useReducer} from 'react'
-import BookingForm from './BookingForm'
+import { useReducer } from "react";
+import { useNavigate } from "react-router-dom";
+import BookingForm from "./BookingForm";
+import { fetchAPI, submitAPI } from "../../../api.js";
 
 const updateTimes = (availableTimes, date) => {
-  switch (date.type) {
-    case "UPDATE_DATE":
-        const selectedDate = date.payload;
+  if (date.type == "UPDATE_DATE") {
+    const selectedDate = fetchAPI(new Date(date.payload));
 
-        return availableTimes;
+    return selectedDate.length !== 0 ? selectedDate : availableTimes;
+  } else {
+    return availableTimes;
+  }
+};
+const initializeTimes = (initialAvailableTimes) => {
+  return [...initialAvailableTimes, ...fetchAPI(new Date())];
+};
 
-    default:
-        return availableTimes;
-}
-}
-const initializeTimes = () => {
-  return ["17:00", "18:00", "19:00", "20:00", "21:00", "22:00"];
-}
 export const Booking = () => {
-  const [availableTimes, dispatchAvailableTimesChange] = useReducer(updateTimes, [], initializeTimes);
+  const [availableTimes, dispatchAvailableTimesChange] = useReducer(
+    updateTimes,
+    [],
+    initializeTimes
+  );
+
+  const navigate = useNavigate();
+  const submitData = (data) => {
+    const submitedData = submitAPI(data);
+    submitedData ? navigate("/confirmedbooking") : alert("fail");
+  };
+
   return (
     <>
-    <section className='booking'>
-    <header>Table Reservation</header>
-    <BookingForm availableTimes={availableTimes} dispatchAvailableTimesChange={dispatchAvailableTimesChange}/>
-    </section>
+      <section className="booking">
+        <header>Table Reservation</header>
+        <BookingForm
+          availableTimes={availableTimes}
+          dispatchAvailableTimesChange={dispatchAvailableTimesChange}
+          submitData={submitData}
+        />
+      </section>
     </>
-  )
-}
+  );
+};

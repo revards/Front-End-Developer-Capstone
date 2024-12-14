@@ -1,4 +1,5 @@
-import React from 'react';
+/* eslint-disable react/prop-types */
+
 import Rating from 'react-rating';
 import './Testimonial.css';
 
@@ -15,7 +16,7 @@ export const Testimonial = ({customer}) => {
         fractions={2}
         readonly={true}
       />
-      <blockquote><p>"{customer.says}"</p></blockquote>
+      <blockquote><p>{'"'}{customer.says}{'"'}</p></blockquote>
     </article>
   )
 }

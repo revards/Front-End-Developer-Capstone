@@ -1,12 +1,11 @@
-import React from 'react'
-import logo from '../images/Logo.svg'
-import './Header.css'
-import { Link } from 'react-router-dom'
+import logo from "../images/Logo.svg";
+import "./Header.css";
+import { Link } from "react-router-dom";
 
 export const Header = () => {
   return (
-    <header className='nav-header grid-container'>
-      <img src={logo} alt='Little lemon Logo' />
+    <header className="nav-header grid-container">
+      <img src={logo} alt="Little lemon Logo" />
       <nav>
         <ul>
           <Link to={"/"}>Home</Link>
@@ -18,5 +17,5 @@ export const Header = () => {
         </ul>
       </nav>
     </header>
-  )
-}
+  );
+};
