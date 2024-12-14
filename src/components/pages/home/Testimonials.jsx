@@ -46,8 +46,8 @@ export const Testimonials = () => {
         <header>
           <h2>What people say about us!</h2>
         </header>
-        {customers.map((customer) => (
-          <Testimonial key={customer.name} customer={customer} />
+        {customers.map((customer, index) => (
+          <Testimonial key={index} customer={customer} />
         ))}
       </div>
     </section>

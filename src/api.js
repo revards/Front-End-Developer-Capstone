@@ -1,5 +1,3 @@
-export { fetchAPI, submitAPI }
-
 const seededRandom = function (seed) {
   var m = 2**35 - 31;
   var a = 185852;
@@ -23,6 +21,9 @@ const fetchAPI = function(date) {
   }
   return result;
 };
+// eslint-disable-next-line no-unused-vars
 const submitAPI = function(formData) {
   return true;
 };
+
+export { fetchAPI, submitAPI }
