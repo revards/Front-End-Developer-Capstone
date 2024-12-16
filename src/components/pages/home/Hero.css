@@ -13,10 +13,13 @@
 .hero p {
     color: white;
 }
-.hero-info, .button-home {
+.hero-info, .button-big {
     grid-column: 1;
     display: inline-block;
     margin-top: 2rem;
+}
+.hero .button-big:hover {
+    border-color: #F4CE14;
 }
 
 .hero img {

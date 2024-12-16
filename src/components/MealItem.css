@@ -5,9 +5,12 @@
     grid-row: 2;
     overflow: hidden;
     border-radius: 1rem;
-    border: 1pt black solid;
+    padding-bottom: 2rem;
 }
 .meal-item img {
     height: 12.5rem;
     object-fit: cover;
+}
+.meal-description a {
+    font-weight: bold;
 }

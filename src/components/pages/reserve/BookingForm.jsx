@@ -1,5 +1,6 @@
 /* eslint-disable react/prop-types */
 import { useState } from "react";
+import "./BookingForm.css"
 
 const BookingForm = ({
   availableTimes,
@@ -32,7 +33,16 @@ const BookingForm = ({
     submitData({ formData });
     alert(`Reservation made: ${JSON.stringify(formData)}`);
   };
-
+  const fieldsNotValid = () => {
+    if (formData.date === "" ||
+      formData.time === "" ||
+      formData.occasion === "" ||
+      formData.guests < 1 ||
+      formData.guests > 10
+    ){
+      return true;
+    }
+  };
   return (
     <form
       style={{ display: "grid", maxWidth: "200px", gap: "20px" }}
@@ -87,7 +97,9 @@ const BookingForm = ({
         <option value="Anniversary">Anniversary</option>
       </select>
 
-      <input type="submit" value="Make Your Reservation" />
+      <button type="submit" className="button-big" disabled={fieldsNotValid()}>
+        Make Your Reservation
+      </button>
     </form>
   );
 };

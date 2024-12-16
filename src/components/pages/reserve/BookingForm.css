@@ -3,3 +3,9 @@ form {
     max-width: 200px;
     gap: 20px
 }
+form .button-big:disabled {
+    background-color:#EDEFEE;
+    border:1px solid #F4CE14;
+    color:#333333;
+    cursor: not-allowed;
+}

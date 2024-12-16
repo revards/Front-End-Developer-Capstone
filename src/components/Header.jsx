@@ -5,7 +5,9 @@ import { Link } from "react-router-dom";
 export const Header = () => {
   return (
     <header className="nav-header grid-container">
-      <img src={logo} alt="Little lemon Logo" />
+      <Link to={"/"}>
+        <img src={logo} alt="Little lemon Logo" aria-label="link"/>
+      </Link>
       <nav>
         <ul>
           <Link to={"/"}>Home</Link>

@@ -1,4 +1,5 @@
 /* eslint-disable react/prop-types */
+import { Link } from 'react-router-dom'
 import './MealItem.css'
 
 export const MealItems = ( {meal} ) => {
@@ -11,7 +12,7 @@ export const MealItems = ( {meal} ) => {
       </header>
       <div className='meal-description'>
         <p>{meal.description}</p>
-        <button>Order a delivery</button>
+        <Link>Order a delivery</Link>
       </div>
     </article>
   )

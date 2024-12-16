@@ -1,12 +1,24 @@
 .nav-header {
     grid-template-columns: 1fr 1fr;
+    min-height: 6rem;
 }
 .nav-header nav ul {
     display: flex;
     justify-content: space-around;
+    align-self: center;
     flex-grow: 4;
     flex-wrap: wrap;
     gap: 0.5em;
+}
+.nav-header nav {
+    align-self: center;
+    justify-content: center;
+}
+.nav-header img {
+    grid-column: 1;
+    width: 16rem;
+    justify-content: start;
+    align-self: center;
 }
 @media (max-width: 60rem) {
     .nav-header {

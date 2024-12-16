@@ -33,13 +33,15 @@ export const Specials = () => {
     <section className="specials grid-container">
       <header>
         <h2>This weeks specials!</h2>
-        <Link className="button-home" to={"/reserve"}>
+        <Link className="button-big" to={"/reserve"}>
           Online Menu
         </Link>
       </header>
+      <div className="items">
       {meals.map((meal, index) => (
         <MealItems key={index} meal={meal} />
       ))}
+      </div>
     </section>
   );
 };

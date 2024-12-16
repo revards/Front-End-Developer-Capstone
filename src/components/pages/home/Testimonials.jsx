@@ -1,8 +1,8 @@
 import "./Testimonials.css";
-import customerImg1 from "./img/restaurant chef B.jpg";
-import customerImg2 from "./img/restaurant chef B.jpg";
-import customerImg3 from "./img/restaurant chef B.jpg";
-import customerImg4 from "./img/restaurant chef B.jpg";
+import customerImg1 from "./img/Guy.jpg";
+import customerImg2 from "./img/Guy.jpg";
+import customerImg3 from "./img/Susan.jpg";
+import customerImg4 from "./img/April.jpg";
 import { Testimonial } from "../../Testimonial";
 const customers = [
   {

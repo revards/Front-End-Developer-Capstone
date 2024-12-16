@@ -2,6 +2,7 @@ import { useReducer } from "react";
 import { useNavigate } from "react-router-dom";
 import BookingForm from "./BookingForm";
 import { fetchAPI, submitAPI } from "../../../api.js";
+import './Booking.css';
 
 const updateTimes = (availableTimes, date) => {
   if (date.type == "UPDATE_DATE") {
@@ -31,7 +32,7 @@ export const Booking = () => {
 
   return (
     <>
-      <section className="booking">
+      <section className="booking grid-container">
         <header>Table Reservation</header>
         <BookingForm
           availableTimes={availableTimes}

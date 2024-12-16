@@ -11,9 +11,9 @@ body {
 }
 h1,
 h2 {
-  line-height: 1;
+  line-height: 1.5;
   font-family: "Markazi Text";
-  font-weight: normal;
+  font-weight: medium;
 }
 
 h1 {
@@ -28,23 +28,16 @@ a {
   text-decoration: none;
   color: #495E57;
 }
-
-
-
-
-
 img {
   max-width: 100%;
 }
-
-
 .grid-container {
   width: 90%;
   display: grid;
   max-width: 60rem;
   margin: 0 auto;
 }
-.button-home {
+.button-big {
 	background-color:#F4CE14;
 	border-radius:2rem;
 	border:1px solid #F4CE14;
@@ -53,7 +46,7 @@ img {
 	font-size:1rem;
 	padding:1rem 1rem;
 }
-.button-home:hover {
+.button-big:hover {
 	background-color:#495E57;
   border-color: #495E57;
   color: #ffffff;
