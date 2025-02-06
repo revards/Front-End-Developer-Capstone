@@ -37,7 +37,7 @@ export const Specials = () => {
           Online Menu
         </Link>
       </header>
-      <div className="items">
+      <div className="items grid-container">
       {meals.map((meal, index) => (
         <MealItems key={index} meal={meal} />
       ))}
