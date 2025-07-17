@@ -1,8 +1,6 @@
 .meal-item {
     display: flex;
     flex-direction: column;
-    grid-column: auto;
-    grid-row: 2;
     overflow: hidden;
     border-radius: 1rem;
     padding-bottom: 2rem;
@@ -13,4 +11,16 @@
 }
 .meal-description a {
     font-weight: bold;
+}
+@media (max-width: 600px) {
+  .meal-item {
+    padding-bottom: 1rem;
+    margin-bottom: 1.5rem;
+  }
+  .meal-item img {
+    height: 8rem;
+  }
+  .meal-description p, .meal-description a {
+    font-size: 1rem;
+  }
 }

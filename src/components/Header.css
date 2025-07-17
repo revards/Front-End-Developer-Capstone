@@ -20,8 +20,68 @@
     justify-content: start;
     align-self: center;
 }
-@media (max-width: 60rem) {
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 1001;
+}
+.hamburger .bar {
+  width: 2rem;
+  height: 0.25rem;
+  background: #495E57;
+  margin: 0.25rem 0;
+  border-radius: 2px;
+  transition: all 0.3s;
+}
+@media (max-width: 600px) {
     .nav-header {
+        display: flex;
         flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+    .nav-header img {
+        width: 10rem;
+        margin-bottom: 0.5rem;
+        justify-content: center;
+    }
+    .nav-header nav ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+        width: 100%;
+    }
+    .hamburger {
+      display: flex;
+      position: absolute;
+      top: 1.5rem;
+      right: 1.5rem;
+    }
+    .nav-header nav {
+      width: 100%;
+    }
+    .nav-header nav ul {
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+      width: 100%;
+      background: #fff;
+      position: absolute;
+      top: 4.5rem;
+      left: 0;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+      z-index: 1000;
+      padding: 2rem 0 1rem 0;
+    }
+    .nav-header nav.open ul {
+      display: flex;
     }
 }

@@ -18,8 +18,10 @@
     .testimonials .grid-container {
         grid-template-columns: 1fr;
         grid-template-rows: repeat(5, auto);
+        gap: 1.5rem;
     }
     .testimonials header {
         grid-column: 1 / 2;
+        margin-bottom: 1rem;
     }
 }

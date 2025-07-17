@@ -58,3 +58,16 @@ img {
     max-width: 100%;
   }
 }
+@media (max-width: 600px) {
+  .grid-container {
+    width: 98%;
+    padding: 0 1vw;
+  }
+  .button-big {
+    font-size: 1.1rem;
+    padding: 1.2rem 0.5rem;
+    width: 100%;
+    min-width: 44px;
+    min-height: 44px;
+  }
+}

@@ -20,8 +20,13 @@
     list-style: none;
 }
 @media (max-width: 600px) {
-    .footer {
+    .footer .grid-container {
         grid-template-columns: 1fr;
         grid-template-rows: repeat(4, auto);
+        gap: 1.5rem;
+        padding: 1.5rem 0;
+    }
+    .footer ul {
+        margin-bottom: 1rem;
     }
 }

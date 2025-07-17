@@ -32,3 +32,16 @@
     background: linear-gradient(to right, #ffd700 50%, #ccc 50%);
     color: transparent;
 }
+
+@media (max-width: 600px) {
+  .testimonial {
+    padding: 0.5rem;
+  }
+  .testimonial img {
+    height: 6rem;
+    width: 6rem;
+  }
+  .star {
+    font-size: 22px;
+  }
+}
