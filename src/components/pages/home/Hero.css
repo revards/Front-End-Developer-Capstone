@@ -31,3 +31,30 @@
     margin-bottom: -3rem;
     border-radius: 1rem;
 }
+
+@media (max-width: 600px) {
+  .hero {
+    padding: 1rem 0.5rem;
+  }
+  .hero .grid-container {
+    grid-template-columns: 1fr;
+    grid-auto-flow: row;
+    gap: 2rem;
+    margin-bottom: 3rem;
+  }
+  .hero img {
+    height: 14rem;
+    margin-bottom: 0;
+    margin-top: 1rem;
+  }
+  .hero-info, .button-big {
+    margin-top: 1rem;
+  }
+  .button-big {
+    width: fit-content;
+    min-width: 44px;
+    max-width: 100%;
+    align-self: flex-start;
+    margin-bottom: 1.5rem;
+  }
+}

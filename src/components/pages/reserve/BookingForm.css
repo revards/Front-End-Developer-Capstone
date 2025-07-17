@@ -1,11 +1,135 @@
 form {
-    display: grid;
-    max-width: 200px;
-    gap: 20px
+  display: grid;
+  max-width: 400px;
+  width: 100%;
+  gap: 1.5rem;
+  margin: 2rem auto;
+  padding: 2rem 2rem 1.5rem 2rem;
+  background: #fff;
+  border-radius: 1.5rem;
+  box-shadow: 0 2px 16px rgba(73, 94, 87, 0.08);
+}
+
+form label {
+  font-family: "Karla", sans-serif;
+  font-size: 1.1rem;
+  color: #495E57;
+  margin-bottom: 0.25rem;
+}
+form input,
+form select {
+  font-family: "Karla", sans-serif;
+  font-size: 1rem;
+  padding: 0.75rem 1rem;
+  border-radius: 1rem;
+  border: 1px solid #495E57;
+  background: #F4F4F4;
+  color: #495E57;
+  margin-bottom: 0.5rem;
+  transition: border-color 0.2s;
+}
+form input:focus,
+form select:focus {
+  border-color: #F4CE14;
+  outline: none;
+}
+.button-big {
+  background-color: #F4CE14;
+  border-radius: 2rem;
+  border: 1px solid #F4CE14;
+  cursor: pointer;
+  color: #495E57;
+  font-size: 1rem;
+  padding: 1rem 1rem;
+  font-family: "Karla", sans-serif;
+  font-weight: bold;
+  transition: background 0.2s, color 0.2s, border-color 0.2s;
+}
+.button-big:hover {
+  background-color: #495E57;
+  border-color: #495E57;
+  color: #fff;
 }
 form .button-big:disabled {
-    background-color:#EDEFEE;
-    border:1px solid #F4CE14;
-    color:#333333;
-    cursor: not-allowed;
+  background-color: #EDEFEE;
+  border: 1px solid #F4CE14;
+  color: #333333;
+  cursor: not-allowed;
+}
+.form-error {
+  color: #b00020;
+  background: #fdecea;
+  border: 1px solid #b00020;
+  padding: 0.5em;
+  border-radius: 4px;
+  margin-bottom: 0.5em;
+  font-size: 0.95em;
+}
+.form-loading {
+  color: #333;
+  background: #fffbe6;
+  border: 1px solid #f4ce14;
+  padding: 0.5em;
+  border-radius: 4px;
+  margin-bottom: 0.5em;
+  font-size: 0.95em;
+}
+form fieldset {
+  display: contents;
+  padding: 0;
+  margin: 0;
+  border: none;
+}
+/* Custom select field arrow styling */
+.select-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.select-wrapper select {
+  width: 100%;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background: #F4F4F4;
+  color: #495E57;
+  border-radius: 1rem;
+  border: 1px solid #495E57;
+  padding-right: 2.5rem;
+  /* Make room for the arrow */
+}
+.select-arrow {
+  position: absolute;
+  right: 1rem;
+  pointer-events: none;
+  top: 50%;
+  transform: translateY(-55%); /* Slightly more than -50% for optical centering */
+  color: #495E57;
+  width: 1.25em;
+  height: 1.25em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.select-wrapper select:focus + .select-arrow {
+  color: #F4CE14;
+}
+@media (max-width: 600px) {
+  form {
+    max-width: 100%;
+    width: 100%;
+    gap: 1.2rem;
+    padding: 1rem 0.5rem;
+    border-radius: 1rem;
+  }
+  .button-big {
+    width: 100%;
+    min-width: 44px;
+    min-height: 44px;
+    font-size: 1.1rem;
+    padding: 1.2rem 0.5rem;
+  }
+  .button-big {
+    text-align: center;
+  }
 }

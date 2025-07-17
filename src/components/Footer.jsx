@@ -13,19 +13,19 @@ export const Footer = () => {
             <Link to={"/"}>Home</Link>
           </li>
           <li>
-            <Link to={"/"}>About</Link>
+            <Link to={"/placeholder"}>About</Link>
           </li>
           <li>
-            <Link to={"/"}>Menu</Link>
+            <Link to={"/placeholder"}>Menu</Link>
           </li>
           <li>
             <Link to={"/reserve"}>Resevations</Link>
           </li>
           <li>
-            <Link to={"/"}>Order Online</Link>
+            <Link to={"/placeholder"}>Order Online</Link>
           </li>
           <li>
-            <Link to={"/"}>Login</Link>
+            <Link to={"/placeholder"}>Login</Link>
           </li>
         </ul>
         <ul className="contact">

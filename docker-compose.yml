@@ -1,0 +1,18 @@
+version: '3.8'
+services:
+  frontend:
+    build: .
+    ports:
+      - "3000:3000"
+    container_name: frontend-app
+    volumes:
+      - ./src:/app/src
+      - ./public:/app/public
+      - ./package.json:/app/package.json
+      - ./vite.config.js:/app/vite.config.js
+      - ./setup.js:/app/setup.js
+      - ./index.html:/app/index.html
+      - ./manifest.json:/app/manifest.json
+    environment:
+      - CHOKIDAR_USEPOLLING=true
+    command: npm run dev 
