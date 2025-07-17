@@ -6,6 +6,8 @@ const BookingForm = ({
   availableTimes,
   dispatchAvailableTimesChange,
   submitData,
+  loading = false,
+  error = "",
 }) => {
   const [formData, setFormData] = useState({
     date: "",
@@ -13,6 +15,7 @@ const BookingForm = ({
     guests: 1,
     occasion: "",
   });
+  const [submitted, setSubmitted] = useState(false);
 
   const handleChange = (e) => {
     const { id, value } = e.target;
@@ -30,8 +33,9 @@ const BookingForm = ({
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    setSubmitted(false);
     submitData({ formData });
-    alert(`Reservation made: ${JSON.stringify(formData)}`);
+    setSubmitted(true);
   };
   const fieldsNotValid = () => {
     if (formData.date === "" ||
@@ -47,7 +51,10 @@ const BookingForm = ({
     <form
       style={{ display: "grid", maxWidth: "200px", gap: "20px" }}
       onSubmit={handleSubmit}
+      aria-disabled={loading}
     >
+      {error && <div className="form-error" role="alert">{error}</div>}
+      {loading && <div className="form-loading">Submitting reservation...</div>}
       <label htmlFor="date">Choose date</label>
       <input
         type="date"
@@ -56,10 +63,11 @@ const BookingForm = ({
         onChange={handleChange}
         data-testid="date-options"
         required
+        disabled={loading}
       />
 
       <label htmlFor="time">Choose time</label>
-      <select id="time" value={formData.time} onChange={handleChange} required>
+      <select id="time" value={formData.time} onChange={handleChange} required disabled={loading}>
         <option value="" disabled>
           Select a Time
         </option>
@@ -81,6 +89,7 @@ const BookingForm = ({
         min="1"
         max="10"
         required
+        disabled={loading}
       />
 
       <label htmlFor="occasion">Occasion</label>
@@ -89,6 +98,7 @@ const BookingForm = ({
         value={formData.occasion}
         onChange={handleChange}
         required
+        disabled={loading}
       >
         <option value="" disabled>
           Select Occasion
@@ -97,8 +107,8 @@ const BookingForm = ({
         <option value="Anniversary">Anniversary</option>
       </select>
 
-      <button type="submit" className="button-big" disabled={fieldsNotValid()}>
-        Make Your Reservation
+      <button type="submit" className="button-big" disabled={fieldsNotValid() || loading}>
+        {loading ? "Submitting..." : "Make Your Reservation"}
       </button>
     </form>
   );

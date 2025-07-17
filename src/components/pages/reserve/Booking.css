@@ -5,6 +5,13 @@
 .booking header{
     font-size: 1rem;
 }
+.confirmation-details {
+  background: #f4f4f4;
+  border-radius: 6px;
+  padding: 1em;
+  margin-bottom: 1em;
+  font-size: 1.05em;
+}
 @media (max-width: 600px) {
   .booking section {
     padding: 1rem 0.5rem;

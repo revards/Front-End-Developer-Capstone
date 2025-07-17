@@ -47,4 +47,11 @@
   .hero-info, .button-big {
     margin-top: 1rem;
   }
+  .button-big {
+    width: fit-content;
+    min-width: 44px;
+    max-width: 100%;
+    align-self: flex-start;
+    margin-bottom: 1.5rem;
+  }
 }

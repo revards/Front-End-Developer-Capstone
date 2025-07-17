@@ -9,6 +9,24 @@ form .button-big:disabled {
     color:#333333;
     cursor: not-allowed;
 }
+.form-error {
+  color: #b00020;
+  background: #fdecea;
+  border: 1px solid #b00020;
+  padding: 0.5em;
+  border-radius: 4px;
+  margin-bottom: 0.5em;
+  font-size: 0.95em;
+}
+.form-loading {
+  color: #333;
+  background: #fffbe6;
+  border: 1px solid #f4ce14;
+  padding: 0.5em;
+  border-radius: 4px;
+  margin-bottom: 0.5em;
+  font-size: 0.95em;
+}
 @media (max-width: 600px) {
   form {
     max-width: 100%;
