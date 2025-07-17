@@ -24,11 +24,11 @@ export const Header = () => {
       <nav id="main-nav" className={menuOpen ? "open" : ""}>
         <ul>
           <Link to={"/"} onClick={() => setMenuOpen(false)}>Home</Link>
-          <Link to={"/"} onClick={() => setMenuOpen(false)}>About</Link>
-          <Link to={"/"} onClick={() => setMenuOpen(false)}>Menu</Link>
+          <Link to={"/placeholder"} onClick={() => setMenuOpen(false)}>About</Link>
+          <Link to={"/placeholder"} onClick={() => setMenuOpen(false)}>Menu</Link>
           <Link to={"/reserve"} onClick={() => setMenuOpen(false)}>Resevations</Link>
-          <Link to={"/"} onClick={() => setMenuOpen(false)}>Order Online</Link>
-          <Link to={"/"} onClick={() => setMenuOpen(false)}>Login</Link>
+          <Link to={"/placeholder"} onClick={() => setMenuOpen(false)}>Order Online</Link>
+          <Link to={"/placeholder"} onClick={() => setMenuOpen(false)}>Login</Link>
         </ul>
       </nav>
     </header>

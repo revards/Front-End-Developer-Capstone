@@ -5,6 +5,13 @@ import "./BookingForm.css"
 const DEFAULT_MIN_GUESTS = 1;
 const DEFAULT_MAX_GUESTS = 10;
 
+// Get today's date in YYYY-MM-DD format
+const today = new Date();
+const yyyy = today.getFullYear();
+const mm = String(today.getMonth() + 1).padStart(2, '0');
+const dd = String(today.getDate()).padStart(2, '0');
+const todayStr = `${yyyy}-${mm}-${dd}`;
+
 const BookingForm = ({
   availableTimes,
   dispatchAvailableTimesChange,
@@ -15,7 +22,7 @@ const BookingForm = ({
   maxGuests = DEFAULT_MAX_GUESTS,
 }) => {
   const [formData, setFormData] = useState({
-    date: "",
+    date: todayStr, // Prefill with today
     time: "17:00",
     guests: minGuests,
     occasion: "",
@@ -76,28 +83,33 @@ const BookingForm = ({
           required
           aria-required="true"
           aria-label="Reservation date"
+          min={todayStr}
+          placeholder={todayStr}
         />
 
         <label htmlFor="time">Choose time</label>
-        <select
-          id="time"
-          value={formData.time}
-          onChange={handleChange}
-          required
-          aria-required="true"
-          aria-label="Reservation time"
-          disabled={noTimesAvailable}
-        >
-          <option value="" disabled>
-            {noTimesAvailable ? "No times available" : "Select a Time"}
-          </option>
-          {!noTimesAvailable &&
-            availableTimes.map((time) => (
-              <option key={time} value={time} data-testid="time-options">
-                {time}
-              </option>
-            ))}
-        </select>
+        <div className="select-wrapper">
+          <select
+            id="time"
+            value={formData.time}
+            onChange={handleChange}
+            required
+            aria-required="true"
+            aria-label="Reservation time"
+            disabled={noTimesAvailable}
+          >
+            <option value="" disabled>
+              {noTimesAvailable ? "No times available" : "Select a Time"}
+            </option>
+            {!noTimesAvailable &&
+              availableTimes.map((time) => (
+                <option key={time} value={time} data-testid="time-options">
+                  {time}
+                </option>
+              ))}
+          </select>
+          <svg className="select-arrow" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M6 8l4 4 4-4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>
+        </div>
         {noTimesAvailable && (
           <div className="form-error" role="alert" aria-live="assertive" style={{marginTop: '0.5rem'}}>
             No available times for the selected date. Please choose another date.
@@ -119,23 +131,26 @@ const BookingForm = ({
         />
 
         <label htmlFor="occasion">Occasion</label>
-        <select
-          id="occasion"
-          value={formData.occasion}
-          onChange={handleChange}
-          required
-          aria-required="true"
-          aria-label="Occasion"
-        >
-          <option value="" disabled>
-            Select Occasion
-          </option>
-          <option value="Birthday">Birthday</option>
-          <option value="Anniversary">Anniversary</option>
-          <option value="Graduation">Graduation</option>
-          <option value="Engagement">Engagement</option>
-          <option value="Other">Other</option>
-        </select>
+        <div className="select-wrapper">
+          <select
+            id="occasion"
+            value={formData.occasion}
+            onChange={handleChange}
+            required
+            aria-required="true"
+            aria-label="Occasion"
+          >
+            <option value="" disabled>
+              Select Occasion
+            </option>
+            <option value="Birthday">Birthday</option>
+            <option value="Anniversary">Anniversary</option>
+            <option value="Graduation">Graduation</option>
+            <option value="Engagement">Engagement</option>
+            <option value="Other">Other</option>
+          </select>
+          <svg className="select-arrow" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M6 8l4 4 4-4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>
+        </div>
 
         <button
           type="submit"

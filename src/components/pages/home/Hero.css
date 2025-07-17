@@ -33,6 +33,9 @@
 }
 
 @media (max-width: 600px) {
+  .hero {
+    padding: 1rem 0.5rem;
+  }
   .hero .grid-container {
     grid-template-columns: 1fr;
     grid-auto-flow: row;

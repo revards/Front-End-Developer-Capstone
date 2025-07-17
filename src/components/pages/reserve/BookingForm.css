@@ -80,6 +80,40 @@ form fieldset {
   margin: 0;
   border: none;
 }
+/* Custom select field arrow styling */
+.select-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.select-wrapper select {
+  width: 100%;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background: #F4F4F4;
+  color: #495E57;
+  border-radius: 1rem;
+  border: 1px solid #495E57;
+  padding-right: 2.5rem;
+  /* Make room for the arrow */
+}
+.select-arrow {
+  position: absolute;
+  right: 1rem;
+  pointer-events: none;
+  top: 50%;
+  transform: translateY(-55%); /* Slightly more than -50% for optical centering */
+  color: #495E57;
+  width: 1.25em;
+  height: 1.25em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.select-wrapper select:focus + .select-arrow {
+  color: #F4CE14;
+}
 @media (max-width: 600px) {
   form {
     max-width: 100%;
@@ -94,5 +128,8 @@ form fieldset {
     min-height: 44px;
     font-size: 1.1rem;
     padding: 1.2rem 0.5rem;
+  }
+  .button-big {
+    text-align: center;
   }
 }

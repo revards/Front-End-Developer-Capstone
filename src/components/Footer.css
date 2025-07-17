@@ -8,6 +8,8 @@
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 1rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
 }
 #footer-img {
     border-radius: 1rem;
@@ -22,8 +24,12 @@
 }
 .footer .grid-container > ul {
     padding-top: 1rem;
+    padding-bottom: 1rem;
 }
 @media (max-width: 600px) {
+    .footer {
+        padding: 1rem 0.5rem;
+    }
     .footer .grid-container {
         grid-template-columns: 1fr;
         grid-template-rows: repeat(4, auto);

@@ -6,24 +6,26 @@ const ConfirmedBooking = () => {
   const details = location.state;
 
   return (
-    <section>
-      <h2>Booking confirmed!</h2>
-      {details ? (
-        <div className="confirmation-details">
-          <p><strong>Date:</strong> {details.date}</p>
-          <p><strong>Time:</strong> {details.time}</p>
-          <p><strong>Guests:</strong> {details.guests}</p>
-          <p><strong>Occasion:</strong> {details.occasion}</p>
+    <div className="confirmation-container">
+      <section className="confirmation-content">
+        <h2 className="confirmation-title">Booking confirmed!</h2>
+        {details ? (
+          <div className="confirmation-details">
+            <p><strong>Date:</strong> {details.date}</p>
+            <p><strong>Time:</strong> {details.time}</p>
+            <p><strong>Guests:</strong> {details.guests}</p>
+            <p><strong>Occasion:</strong> {details.occasion}</p>
+          </div>
+        ) : (
+          <p className="confirmation-message">Your reservation is confirmed.</p>
+        )}
+        <p className="confirmation-message">Contact us for any additional information.</p>
+        <div className="confirmation-actions">
+          <button className="button-big" onClick={() => navigate("/")}>Return to Home</button>
+          <button className="button-big" onClick={() => navigate("/reserve")}>Make Another Reservation</button>
         </div>
-      ) : (
-        <p>Your reservation is confirmed.</p>
-      )}
-      <p>Contact us for any additional information.</p>
-      <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', marginTop: '1.5rem' }}>
-        <button className="button-big" onClick={() => navigate("/")}>Return to Home</button>
-        <button className="button-big" onClick={() => navigate("/reserve")}>Make Another Reservation</button>
-      </div>
-    </section>
+      </section>
+    </div>
   );
 };
 
