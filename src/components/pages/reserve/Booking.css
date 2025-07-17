@@ -1,9 +1,17 @@
-.booking section{
-    justify-content: center;
-    align-self: center;
+.booking {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 3rem 0 4rem 0;
+  padding: 2rem 0;
 }
-.booking header{
-    font-size: 1rem;
+.booking header {
+  font-size: 2.5rem;
+  font-family: "Markazi Text";
+  color: #495E57;
+  margin-bottom: 2rem;
+  text-align: center;
 }
 .confirmation-details {
   background: #f4f4f4;
@@ -13,13 +21,12 @@
   font-size: 1.05em;
 }
 @media (max-width: 600px) {
-  .booking section {
+  .booking {
     padding: 1rem 0.5rem;
-    width: 100%;
+    margin: 1.5rem 0 2rem 0;
   }
   .booking header {
-    font-size: 1.2rem;
-    text-align: center;
+    font-size: 2rem;
     margin-bottom: 1rem;
   }
 }

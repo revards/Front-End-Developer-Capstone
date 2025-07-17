@@ -19,8 +19,10 @@ const ConfirmedBooking = () => {
         <p>Your reservation is confirmed.</p>
       )}
       <p>Contact us for any additional information.</p>
-      <button onClick={() => navigate("/")}>Return to Home</button>
-      <button onClick={() => navigate("/reserve")}>Make Another Reservation</button>
+      <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', marginTop: '1.5rem' }}>
+        <button className="button-big" onClick={() => navigate("/")}>Return to Home</button>
+        <button className="button-big" onClick={() => navigate("/reserve")}>Make Another Reservation</button>
+      </div>
     </section>
   );
 };

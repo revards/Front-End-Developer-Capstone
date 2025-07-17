@@ -44,8 +44,8 @@ export const Booking = () => {
   };
 
   return (
-    <>
-      <section className="booking grid-container">
+    <div className="grid-container">
+      <section className="booking">
         <header>Table Reservation</header>
         <BookingForm
           availableTimes={availableTimes}
@@ -55,6 +55,6 @@ export const Booking = () => {
           error={error}
         />
       </section>
-    </>
+    </div>
   );
 };

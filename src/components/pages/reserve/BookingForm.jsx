@@ -49,7 +49,6 @@ const BookingForm = ({
   };
   return (
     <form
-      style={{ display: "grid", maxWidth: "200px", gap: "20px" }}
       onSubmit={handleSubmit}
       aria-disabled={loading}
     >
